@@ -4,6 +4,7 @@ class Ambiente():
     def __init__(self, salas):
         self.salas = salas
 
+    # Suja salas de maneira aleatória
     def sujar(self):
         for i in range(len(self.salas)):
             if r.randint(1, 10) > 6:
@@ -16,9 +17,6 @@ class Ambiente():
         else:
             return False
 
-
-        #return self.salas[posicao_atual] == 1
-
     # Remove a sujeira da sala
     def limpar_sala(self, posicao: int):
         self.salas[posicao] = 0
@@ -26,9 +24,6 @@ class Ambiente():
     # Agente tentando se mover para fora do ambiente (Paredes)
     def colisao(self, posicao):
         return posicao >= len(self.salas) or posicao < 0
-
-    def imprimir_ambiente(self):
-        print(self.salas)
 
 class Agente():
     def __init__(self, ambiente: Ambiente, posicao_atual: int):

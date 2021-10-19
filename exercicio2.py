@@ -11,8 +11,10 @@ class Ambiente():
 
     # recebe a posição do agente e verifica se está suja ou limpa
     def status_sala(self, posicao_atual: int):
-        return self.salas[posicao_atual] == 1
-        
+        if self.salas[posicao_atual] == 1:
+            return True
+        else:
+            return False  
 
     # Remove a sujeira da sala
     def limpar_sala(self, posicao: int):
@@ -247,7 +249,7 @@ class main():
 
     
     print('Score Final Aspirador 1 = ', total1, " \n############################################\n\n")
-    print('Score Final Aspirador 2 = ', total2, " \n############################################\n\n") 
+    print('Score Final Aspirador 2 = ', total2, "\n\n") 
 
 
 
